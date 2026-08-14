@@ -26,7 +26,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->brandName('Klinik USG 4D')
+            ->brandName('Almuhayatsyah Spa')
             ->login()
             ->colors([
                 'primary' => Color::Cyan,
