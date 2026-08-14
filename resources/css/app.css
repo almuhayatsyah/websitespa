@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────
+   BASE STYLES
+────────────────────────────────────────────── */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        @apply font-sans text-gray-700 bg-cream-50;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading font-bold text-gray-800;
+    }
+}
+
+/* ──────────────────────────────────────────────
+   COMPONENT STYLES
+────────────────────────────────────────────── */
+@layer components {
+
+    /* Buttons */
+    .btn-primary {
+        @apply inline-flex items-center gap-2 px-6 py-3 bg-spa-600 text-white font-semibold rounded-xl hover:bg-spa-700 active:bg-spa-800 transition-all duration-200 shadow-md hover:shadow-hover hover:-translate-y-0.5;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-spa-600 font-semibold rounded-xl border-2 border-spa-600 hover:bg-spa-50 active:bg-spa-100 transition-all duration-200 hover:-translate-y-0.5;
+    }
+
+    .btn-whatsapp {
+        @apply inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-xl hover:bg-green-600 active:bg-green-700 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    }
+
+    /* Cards */
+    .card {
+        @apply bg-white rounded-2xl shadow-card border border-spa-100/50 overflow-hidden transition-all duration-300 hover:shadow-hover hover:-translate-y-1;
+    }
+
+    .card-body {
+        @apply p-6;
+    }
+
+    /* Section Titles */
+    .section-title {
+        @apply text-3xl md:text-4xl font-heading font-bold text-gray-800 leading-tight;
+    }
+
+    .section-subtitle {
+        @apply text-lg text-gray-500 mt-3 leading-relaxed;
+    }
+
+    .section-badge {
+        @apply inline-flex items-center gap-1.5 px-4 py-1.5 bg-spa-100 text-spa-700 rounded-full text-sm font-semibold mb-4;
+    }
+
+    /* Navigation */
+    .nav-link {
+        @apply text-gray-600 hover:text-spa-600 font-medium transition-colors duration-200 relative;
+    }
+
+    .nav-link.active {
+        @apply text-spa-600;
+    }
+
+    /* Star Rating */
+    .star-rating {
+        @apply flex items-center gap-0.5 text-amber-400;
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+        @apply border border-gray-200 rounded-xl overflow-hidden mb-3 transition-all duration-200;
+    }
+
+    .faq-item.open {
+        @apply border-spa-300 shadow-soft;
+    }
+
+    .faq-trigger {
+        @apply w-full flex items-center justify-between p-5 text-left font-semibold text-gray-800 hover:bg-cream-100 transition-colors duration-200 cursor-pointer;
+    }
+
+    .faq-content {
+        @apply text-gray-600 leading-relaxed;
+    }
+
+    /* Article Tags */
+    .tag {
+        @apply inline-flex items-center px-3 py-1 bg-spa-100 text-spa-700 rounded-full text-xs font-semibold;
+    }
+
+    /* Hero gradient */
+    .hero-gradient {
+        background: linear-gradient(135deg, #faf6f1 0%, #f3ebe0 40%, #f6f7f4 100%);
+    }
+
+    /* Glass morphism */
+    .glass {
+        @apply bg-white/80 backdrop-blur-md border border-white/50;
+    }
+}
+
+/* ──────────────────────────────────────────────
+   UTILITY STYLES
+────────────────────────────────────────────── */
+@layer utilities {
+    .text-gradient {
+        background: linear-gradient(to right, #8b6f47, #a0845c, #c4a882, #8b6f47);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: textShine 4s linear infinite;
+    }
+
+    @keyframes textShine {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    .bg-pattern {
+        background-image: radial-gradient(circle at 1px 1px, rgba(139, 111, 71, 0.06) 1px, transparent 0);
+        background-size: 32px 32px;
+    }
+
+    .clip-diagonal {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    /* Scrollbar styles */
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 4px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+        @apply bg-cream-100;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        @apply bg-spa-300 rounded-full;
+    }
+}
+
+/* ──────────────────────────────────────────────
+   NAVBAR
+────────────────────────────────────────────── */
+#navbar {
+    transition: all 0.3s ease;
+}
+
+#navbar.scrolled {
+    @apply shadow-md bg-white/95 backdrop-blur-md;
+}
+
+/* ──────────────────────────────────────────────
+   ANIMATIONS & TRANSITIONS
+────────────────────────────────────────────── */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation delays */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* FAB WhatsApp */
+.fab-whatsapp {
+    @apply fixed bottom-6 right-6 z-50;
+}
+
+.fab-whatsapp a {
+    @apply flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:bg-green-600 hover:shadow-xl transition-all duration-300 hover:scale-110;
+}
+
+.fab-whatsapp .pulse-ring {
+    @apply absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75;
+}

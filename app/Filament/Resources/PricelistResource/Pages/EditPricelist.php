@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Filament\Resources\PricelistResource\Pages;
+
+use App\Filament\Resources\PricelistResource;
+use Filament\Resources\Pages\EditRecord;
+
+class EditPricelist extends EditRecord
+{
+    protected static string $resource = PricelistResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            \Filament\Actions\DeleteAction::make(),
+        ];
+    }
+}
