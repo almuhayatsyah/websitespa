@@ -39,10 +39,10 @@ class Pengaturan extends Model
     public static function getSetting(): static
     {
         return static::firstOrCreate([], [
-            'nama_situs'     => 'Luxury Spa & Wellness',
+            'nama_situs'     => 'Spa Kecantikan',
             'slogan'         => 'Rasakan Ketenangan & Kecantikan Alami',
             'gambar_hero'    => null,
-            'nama_perusahaan'=> 'Luxury Spa & Wellness',
+            'nama_perusahaan'=> 'Spa Kecantikan',
             'media_sosial'   => [
                 'facebook'  => '',
                 'instagram' => '',
@@ -51,7 +51,7 @@ class Pengaturan extends Model
             ],
             'meta_seo' => [
                 'keywords' => 'spa, wellness, massage, facial, body treatment, relaksasi, kecantikan',
-                'author'   => 'Luxury Spa & Wellness',
+                'author'   => 'Spa Kecantikan',
                 'google_analytics' => '',
             ],
             'jam_operasional' => [

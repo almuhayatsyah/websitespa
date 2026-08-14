@@ -26,7 +26,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->brandName('Almuhayatsyah Spa')
+            ->brandName('Spa Kecantikan')
             ->login()
             ->colors([
                 'primary' => Color::Cyan,
