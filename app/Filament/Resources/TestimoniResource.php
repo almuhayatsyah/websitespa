@@ -23,7 +23,7 @@ class TestimoniResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Forms\Components\Section::make('Data Pasien')
+            Forms\Components\Section::make('Data Pelanggan')
                 ->schema([
                     Forms\Components\TextInput::make('nama')
                         ->label('Nama')
@@ -46,7 +46,7 @@ class TestimoniResource extends Resource
                         ->avatar()
                         ->imageEditor()
                         ->maxSize(1024)
-                        ->helperText('Opsional. Foto profil pasien.'),
+                        ->helperText('Opsional. Foto profil pelanggan.'),
                 ])->columns(2),
 
             Forms\Components\Section::make('Ulasan')

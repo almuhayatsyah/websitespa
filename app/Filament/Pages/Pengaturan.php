@@ -36,7 +36,7 @@ class Pengaturan extends Page
             ->schema([
                 // ── Identitas Situs ────────────────────────────
                 Forms\Components\Section::make('🏥 Identitas Situs')
-                    ->description('Informasi dasar klinik yang tampil di seluruh halaman')
+                    ->description('Informasi dasar spa yang tampil di seluruh halaman')
                     ->schema([
                         Forms\Components\TextInput::make('nama_situs')
                             ->label('Nama Situs')
@@ -98,7 +98,7 @@ class Pengaturan extends Page
                 Forms\Components\Section::make('📋 Informasi Kontak')
                     ->schema([
                         Forms\Components\TextInput::make('nama_perusahaan')
-                            ->label('Nama Perusahaan / Klinik')
+                            ->label('Nama Perusahaan / Spa')
                             ->maxLength(255),
 
                         Forms\Components\Textarea::make('alamat')
@@ -127,7 +127,7 @@ class Pengaturan extends Page
                     ])->columns(2),
 
                 // ── Profil Singkat (Visi, Misi, Nilai) ─────────
-                Forms\Components\Section::make('🎯 Profil & Nilai Klinik (Tentang Kami)')
+                Forms\Components\Section::make('🎯 Profil & Nilai Spa (Tentang Kami)')
                     ->schema([
                         Forms\Components\Textarea::make('visi')
                             ->label('Visi')
@@ -174,8 +174,8 @@ class Pengaturan extends Page
                             ->columnSpanFull(),
                     ]),
 
-                // ── Tim Klinik (Staff, Dokter, dll) ────────────
-                Forms\Components\Section::make('👨‍⚕️ Tim Klinik & Staff')
+                // ── Tim Spa (Staff, Terapis, dll) ────────────
+                Forms\Components\Section::make('💆‍♀️ Tim Terapis & Staff')
                     ->description('Daftar dokter dan staf yang akan ditampilkan di halaman Tentang Kami.')
                     ->schema([
                         Forms\Components\Repeater::make('tim_klinik')
@@ -253,7 +253,7 @@ class Pengaturan extends Page
                     ->schema([
                         Forms\Components\TextInput::make('meta_seo.keywords')
                             ->label('Meta Keywords')
-                            ->helperText('Pisahkan dengan koma. Contoh: USG 4D, klinik USG, kehamilan.')
+                            ->helperText('Pisahkan dengan koma. Contoh: spa, wellness, massage, perawatan tubuh.')
                             ->columnSpanFull(),
 
                         Forms\Components\TextInput::make('meta_seo.author')
@@ -301,7 +301,7 @@ class Pengaturan extends Page
                 ->color('info')
                 ->form([
                     Forms\Components\FileUpload::make('logo')
-                        ->label('Logo Klinik')
+                        ->label('Logo Spa')
                         ->image()
                         ->directory('pengaturan')
                         ->disk('public')
